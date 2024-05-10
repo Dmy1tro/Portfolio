@@ -1,0 +1,25 @@
+Chapter 1: Strategy
+Step 1 -> Planning and strategy
+ - Why? Who is it for? What?
+ - Conversation + Research
+
+Step 2 -> Structure (UX)
+ - Pages, Content, scratches
+ 
+Step 3 -> Design (UI)
+ - Colors, fonts, images.
+
+Step 4 -> Development
+ - Adaptive design for laptops, mobile, etc.
+ - Ready to use libraries and frameworks
+
+Chapter 2: Strategy
+ - Ecommerce, Marketing/Business, Content, Educational, Portfolio, Apps
+ - Each type of website has its own goal: Selling products, building trust, generating leads, providing value
+ To determine type and goals we need to perform Strategy_Session with clients
+ The outcome of these sessions is Project Brief (Overview, Description, Target Audience, Scope, Key desired attributes & emotions)
+ + references to existing websites that client likes and would like to make smth similar.
+
+Chapter 3: Structure
+ - Navigation, Main pages(Home, About, etc.), Hero section, Features section, Call to action section, Happy customers review section, Pricing, Gallery, Contact, Footer
+ - SiteMap

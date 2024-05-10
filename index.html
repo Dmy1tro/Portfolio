@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Dmytro Laskuryk</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Dmytro Laskuryk</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="profile">
+        <div class="section-picture-container profile-picture">
+            <img class="picture-rounded" src="./assets/profile-1.png" alt="Profile picture" /> 
+        </div>
+        <div class="profile-section-text">
+            <p class="section-text-p1">Hello, I'm</p>
+            <h1 class="title">Dmytro</h1>
+            <p class="section-text-p2">Full-Stack Developer</p>
+            <div class="btn-container">
+                <button class="btn btn-color-secondary" onclick="window.open('./assets/example.pdf')">
+                    Download CV
+                </button>
+                <button class="btn btn-color-primary" type="button" onclick="location.href='./#contact'">
+                    Contact info
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn profile" class="icon" onclick="window.open('https://ua.linkedin.com/')" />
+                <img src="./assets/github.png" alt="GitHub profile" class="icon" onclick="window.open('https://github.com/')" />
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#about'">
+    </section>
+    <section id="about">
+        <p class="section-text-p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="section-picture-container about-picture-container">
+                <img class="picture-rounded" src="./assets/profile-2.png" alt="Profile picture">
+            </div>
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <img class="icon" src="./assets/experience.png" alt="Experience icon">
+                        <h3>Experience</h3>
+                        <p>4+ years <br>Full-Stack Development</p>
+                    </div>
+                    <div class="details-container">
+                        <img class="icon" src="./assets/education.png" alt="Education icon">
+                        <h3>Education</h3>
+                        <p>B.Sc. Bachelors Degree </p>
+                        <p>M.Sc. Master Degree</p>
+                    </div>
+                </div>
+
+                <div class="text-container">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut obcaecati consequatur accusamus, nulla facere, accusantium facilis suscipit laboriosam iure illo quidem aspernatur nemo. Eius, aperiam maxime. Veritatis consequatur reprehenderit aspernatur dolorem esse praesentium rem repellat ratione ea iusto eveniet rerum temporibus unde deserunt tempore libero quidem, velit quod odit quisquam.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
+    </section>
+    <section id="experience">
+        <p class="section-text-p1">Explore My</p>
+        <h1 class="title">Experience</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Frontend Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div>
+                                <h3>Angular</h3>
+                                <p>Good</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div>
+                                <h3>TypeScript</h3>
+                                <p>Good</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div>
+                                <h3>Material UI</h3>
+                                <p>Good</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Backend Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div>
+                                <h3>ASP.NET</h3>
+                                <p>Good</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div>
+                                <h3>C#</h3>
+                                <p>Good</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div>
+                                <h3>MS SQL</h3>
+                                <p>Good</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'">
+    </section>
+    <!-- <section id="projects">
+
+    </section> -->
+    <section id="contact">
+        <p class="section-text-p1">Get In Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
+                <p><a href="mailto:qq.qq@gmail.com">qq.qq@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
+                <p><a href="https://ua.linkedin.com/">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

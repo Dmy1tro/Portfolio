@@ -1,0 +1,21 @@
+#profile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    height: 83vh;
+}
+
+.profile-picture {
+    flex: 1;
+}
+
+.profile-section-text {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-section-text p {
+    font-weight: 600;
+}
