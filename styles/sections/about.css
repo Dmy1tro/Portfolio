@@ -8,6 +8,7 @@
 }
 
 .about-containers {
+    flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -15,6 +16,7 @@
 
 .about-picture-container {
     flex: 1;
+    overflow: auto;
 }
 
 .about-details-container {
@@ -25,7 +27,7 @@
 .details-container {
     padding: 1.5rem;
     flex: 1;
-    background: white;
+    background: transparent;
     border-radius: 2rem;
     border: rgb(163, 163, 163) 0.1rem solid;
     border-color: rgb(163, 163, 163);

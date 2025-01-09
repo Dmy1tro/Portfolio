@@ -6,4 +6,35 @@
     #hamburger-nav {
         display: flex;
     }
+
+    section {
+        padding-top: 4vh;
+        margin: 0 1rem;
+    }
+
+    #profile {
+        flex-direction: column;
+    }
+
+    .profile-picture {
+        margin-top: 2rem;
+    }
+
+    .profile-section-text {
+        flex: 2;
+    }
+
+    .section-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-info-upper-container {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .icon.arrow {
+        display: none;
+    }
 }

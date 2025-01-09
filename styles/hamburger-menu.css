@@ -51,6 +51,7 @@
 }
 
 .menu-links.open {
+    z-index: 99;
     max-height: 300px;
 }
 

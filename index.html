@@ -7,17 +7,26 @@
     <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Dmytro Laskuryk</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="desktop-nav">
+        <nav class="fixed-nav">
+            <div class="logo">
+                Dmytro Laskuryk
+
+                <button class="btn btn-color-secondary" onclick="toggleTheme()">
+                    Theme
+                </button>
+            </div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="fixed-nav-spacer"></div>
+    </div>
     <nav id="hamburger-nav">
         <div class="logo">Dmytro Laskuryk</div>
         <div class="hamburger-menu">
@@ -27,9 +36,9 @@
                 <span></span>
             </div>
             <div class="menu-links">
+                <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
                 <li><a href="#about" onclick="toggleMenu()">About</a></li>
                 <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
             </div>
         </div>
@@ -62,7 +71,7 @@
         <h1 class="title">About Me</h1>
         <div class="section-container">
             <div class="section-picture-container about-picture-container">
-                <img class="picture-rounded" src="./assets/profile-2.png" alt="Profile picture">
+                <img class="picture-rounded about-picture" src="./assets/profile-2.png" alt="Profile picture">
             </div>
             <div class="about-details-container">
                 <div class="about-containers">
@@ -149,9 +158,6 @@
         </div>
         <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'">
     </section>
-    <!-- <section id="projects">
-
-    </section> -->
     <section id="contact">
         <p class="section-text-p1">Get In Touch</p>
         <h1 class="title">Contact Me</h1>
@@ -169,3 +175,11 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- Sticky header - DONE
+Scroll between sections like in powerPoint - DONE
+Fix gaps in icons (mobile view) - DONE
+Update animation arrow-icon - DONE
+How to choose colors (colors compatibility)
+Site accessability
+Dark theme -->

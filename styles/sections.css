@@ -1,9 +1,18 @@
+.scroll-snap-sections-container {
+    scroll-snap-type: y mandatory;
+    height: 83vh;
+    overflow: scroll;
+}
+
 section {
-    padding-top: 4vh;
-    height: 96vh;
+    padding-top: 12vh;
+    height: 100vh;
     margin: 0 10rem;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     min-height: fit-content;
+    scroll-snap-align: start;
+
+    /* border: 2px solid red; */
 }
 
 .section-container {
@@ -12,9 +21,9 @@ section {
     height: 80%;
 }
 
-/* .section-picture-container {
+.section-picture-container {
     display: flex;
-} */
+}
 
 .section-picture-container img {
     width: 100%;
@@ -44,7 +53,7 @@ section {
 
 .icon {
     cursor: pointer;
-    height: 2rem;
+    height: 2.5rem;
 }
 
 .icon.arrow {

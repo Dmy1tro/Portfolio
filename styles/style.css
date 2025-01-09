@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 @import 'hamburger-menu.css';
 @import 'sections.css';
@@ -18,8 +17,21 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
+
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+}
+
 body {
     font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 p {
@@ -35,6 +47,28 @@ nav {
     justify-content: space-around;
     align-items: center;
     height: 17vh;
+    transition: all 300ms ease-in-out;
+}
+
+.fixed-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+.fixed-nav-scrolled {
+    height: 10vh;
+    background-color: black;
+    transition: all 300ms ease-in-out;
+}
+
+.fixed-nav-scrolled * {
+    color: white;
+    transition: all 300ms ease-in-out;
+}
+
+.fixed-nav-spacer {
+    height: 17vh;
 }
 
 .nav-links {
@@ -48,6 +82,10 @@ a {
     color: black;
     text-decoration: none;
     text-decoration-color: white;
+}
+
+.dark-theme a {
+    color: white;
 }
 
 a:hover {
