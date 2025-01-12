@@ -63,7 +63,25 @@ section {
 }
 
 .arrow:hover {
-    animation: 0.4s linear infinite fan;
+    animation: 1s linear infinite pulse;
+}
+
+@keyframes pulse {
+    25% {
+        transform: scale(1.5);
+    }
+
+    50% {
+        transform: scale(2);
+    }
+
+    75% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes fan {

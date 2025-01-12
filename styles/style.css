@@ -106,3 +106,15 @@ a:hover {
 .picture-rounded {
     border-radius: 2rem;
 }
+
+footer {
+    display: flex;
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+footer p {
+    color: white;
+}

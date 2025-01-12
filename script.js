@@ -11,8 +11,8 @@ window.addEventListener('scroll', () => {
     document.querySelector('.fixed-nav').classList.toggle('fixed-nav-scrolled', window.scrollY > 60);
 });
 
-const sectionsManager = {
-    sections: document.querySelectorAll("section"),
+const pageScrollManager = {
+    sections: [...document.querySelectorAll('section'), document.querySelector('footer')],
     index: 0,
 
     scrollToSection() {
@@ -29,6 +29,11 @@ const sectionsManager = {
         }
     },
     setSectionByScrollPosition(scrollPosition) {
+        if (this.isFooterInView()) {
+            this.index = this.sections.length - 1;
+            return;
+        }
+
         this.sections.forEach((section, index) => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
@@ -43,11 +48,13 @@ const sectionsManager = {
     next() {
         if (!this.isLastSection()) {
             this.index++;
+            this.scrollToSection();
         }
     },
     back() {
         if (!this.isFirstSection()) {
             this.index--;
+            this.scrollToSection();
         }
     },
     isLastSection() {
@@ -55,23 +62,39 @@ const sectionsManager = {
     },
     isFirstSection() {
         return this.index === 0;
+    },
+    isFooterInView() {
+        const rect = this.sections[this.sections.length - 1].getBoundingClientRect();
+
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+        );
     }
 }
 
 window.addEventListener('wheel', (event$) => {
-    const currentSection = sectionsManager.index;
-
     if (event$.deltaY > 0) {
-        sectionsManager.next();
+        pageScrollManager.next();
     } else if (event$.deltaY < 0) {
-        sectionsManager.back();
-    }
-
-    if (sectionsManager.index !== currentSection) {
-        sectionsManager.scrollToSection();
+        pageScrollManager.back();
     }
 });
 
-window.addEventListener('scroll', () => {
-    sectionsManager.setSectionByScrollPosition(window.scrollY);
+window.addEventListener('scrollend', (event$) => {
+    setTimeout(() => {
+        pageScrollManager.setSectionByScrollPosition(window.scrollY);
+    });
+});
+
+window.addEventListener('keyup', ($event) => {
+    if ($event.key === 'ArrowUp') {
+        pageScrollManager.back();
+    }
+
+    if ($event.key === 'ArrowDown') {
+        pageScrollManager.next();
+    }
 });
