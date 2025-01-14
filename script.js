@@ -15,6 +15,10 @@ const pageScrollManager = {
     sections: [...document.querySelectorAll('section'), document.querySelector('footer')],
     index: 0,
 
+    get footer() {
+        return this.sections[this.sections.length - 1];
+    },
+
     scrollToSection() {
         if (this.isFirstSection()) {
             window.scrollTo({
@@ -29,6 +33,8 @@ const pageScrollManager = {
         }
     },
     setSectionByScrollPosition(scrollPosition) {
+        // Footer takes small height therefore it causes bug with scrolling
+        // Have to manually check is footer in view
         if (this.isFooterInView()) {
             this.index = this.sections.length - 1;
             return;
@@ -64,26 +70,34 @@ const pageScrollManager = {
         return this.index === 0;
     },
     isFooterInView() {
-        const rect = this.sections[this.sections.length - 1].getBoundingClientRect();
+        const rect = this.footer.getBoundingClientRect();
 
         return (
             rect.top >= 0 &&
             rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
 }
 
+// Implement throttling to smooth the user interaction
+let wheelDebounceTimeout;
 window.addEventListener('wheel', (event$) => {
-    if (event$.deltaY > 0) {
-        pageScrollManager.next();
-    } else if (event$.deltaY < 0) {
-        pageScrollManager.back();
+    if (wheelDebounceTimeout) {
+        clearTimeout(wheelDebounceTimeout);
     }
+
+    wheelDebounceTimeout = setTimeout(() => {
+        if (event$.deltaY > 0) {
+            pageScrollManager.next();
+        } else if (event$.deltaY < 0) {
+            pageScrollManager.back();
+        }
+    }, 80);
 });
 
-window.addEventListener('scrollend', (event$) => {
+window.addEventListener('scrollend', () => {
     setTimeout(() => {
         pageScrollManager.setSectionByScrollPosition(window.scrollY);
     });
